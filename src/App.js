@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import Navbar from './components/Navbar';
+import SearchBar from './components/SearchBar';
+import MovieList from './components/MovieList';
 
 function App() {
+  const [movies, setMovies] = useState([]);
+
+  const searchMovies = (query) => {
+    // Implementasi pencarian film
+    // Set hasil pencarian ke state movies
+  };
+
+  useEffect(() => {
+    // Ambil data film awal, misalnya dari API
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <SearchBar onSearch={searchMovies} />
+      <MovieList movies={movies} />
     </div>
   );
 }
